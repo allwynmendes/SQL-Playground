@@ -26,7 +26,6 @@ desc employees;
 
 DECLARE 
     cursor c1 is select first_name, salary from employees where employee_id between 100 and 110;
-    emprec c1%rowtype;
     type emp_name is varray(15) of employees.first_name%type;
     type emp_sal is varray(15) of employees.salary%type;
     ename emp_name := emp_name(); --Important to declare the array like this
