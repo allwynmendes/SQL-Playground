@@ -1,0 +1,76 @@
+ Procedures:
+----------------
+- It is a named pl/sql block.
+- Permanantly saved in a DB.
+Features:
+-----------
+- It is saved in DB as precompil ed object.
+- Procedures executed explicitly.
+	execute/exec Proc_name(ArgVal1 Datatype, ArgVal2 Datatype.....);
+- Procedures also executed implicitly using procedure calling statements.
+ 	Proc_name(ArgVal1 Datatype, ArgVal2 Datatype.....);
+- You can call it as from other procedure, Functions, program and package also. But you can't call from select statement. 
+- Procedure may or may not take arguments runtimes. that is Procedures are static and dynamics.
+- By default procesures should not return any values to the calling areas.
+
+Static Procesure: Not Take argument as a parameters
+Dynamic Procedure: Take argument as a parameters
+
+Syntax:
+create [or replace] procedure proc_name		}	
+[(ArgVal1 Datatype, ArgVal2 Datatype.....)]	}	SPEC
+is/as						}
+<declare>
+Begin						}
+-----						}
+-----						}
+-----						}	Body
+EXCEPTION					}
+------						}
+------						}
+End [proc_name];				}
+
+It means that, Any Procedure having two Parts:
+1) Procedure Specification / Spec:
+	Creation Imformation:
+
+create [or replace] procedure proc_name		}	
+[(ArgVal1 Datatype, ArgVal2 Datatype.....)]	}	SPEC
+is/as						}
+
+2) Procedure Body:
+	It contains logic of the procedure. 	
+
+<declare>
+Begin						}
+-----						}
+-----						}
+-----						}	Body
+EXCEPTION					}
+------						}
+------						}
+End [proc_name];				}
+
+Ex.1: Procedure to display number of employees under department no 30?
+Ex.2: Procedure to display number of employees with given department no?
+Ex.3: Procedure to display number of employees with given designation?
+
+describe User_procedures : System defined table
+
+Drop procedure proc_name: delete the procedure from the DB.
+
+How to make a call to the procedures?
+
+- You can call the procedure using another program, Procedure, function and from another package.
+
+a) How to call a procedure from different program:
+--
+	1) Program: Finding total payment for given dept no?
+	2) Procedure: Finding Total payment and display it. 
+
+b) How to call a procedure from different procedure:
+--
+	I/P - DeptNo
+	O/P - Task1		Task2		Task3		Task4
+	      Total(sal)	AVG(sal) 	Max(sal)	Min(sal)
+	

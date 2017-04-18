@@ -1,0 +1,8 @@
+DECLARE
+       TYPE t IS TABLE OF VARCHAR2(32);
+       names t := t(&names);
+    BEGIN
+        FOR j IN 1..names.COUNT LOOP
+               dbms_output.put_line(j || names(j));
+        END LOOP;
+    END;

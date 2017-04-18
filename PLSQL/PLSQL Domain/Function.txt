@@ -1,0 +1,111 @@
+FUNCTION:
+-------------
+- Function is also a PLSQL Object.
+- It is PLSQL sub-programs like procedure.
+- Functions  b are implemented based on common logic.
+- Like procedures it is also one time compilation object that is    it is precompiled object.
+- When we used procedure and when we used function?
+- Function are only implicitely call.
+- By default function should return a value.
+	
+Function have two parts: It created together.
+A) Fun Specification:
+
+create or replace function fun_name	}
+(Arg type.....)				}
+return <datatype>			}
+is					}
+
+B) Fun Body
+
+<declare>				}
+begin					}
+---					}
+---					}
+return (value/var)			}
+end fun_name;				}
+
+How to call function?
+
+fun_name(Arg Values.......);
+
+From where we call a function:
+Using select query.
+from a procedure
+From other function
+From package
+From a program
+
+Function taking 2 values and returning multiplication of these values:
+create or replace function mult(x int , y int)
+return int
+is
+z:=int;
+begin
+z:=x*y;
+return z;
+end mult;
+
+
+
+Business Cinario:
+
+O/P Task:
+---------
+	EmpID	SAL	Bonus	Final_SAL
+	------  -----   ------  ---------
+
+Task1:	Only for given EmpID.
+
+Task2:	Get above output for all employees.
+
+Task3:	Get above output for given job category.
+
+---------------------------------------------------------------
+
+Parameter in Procedure and Function:
+IN	: - Accepting only input value at runtime.
+	  - You cant change the value in the program that 	  	    compiletime.
+Ex. :  * Proc to display emp name for given empid.
+
+OUT	: - Arg value return to calling area(object)
+	  - Dont try to change this arg value in the procedure,
+Ex. : * Proc to return ename and salary to the program for given 	emp id.
+
+IN OUT: - Accept runtime input value.
+	- We can change its value with in procedure.
+	Ex. * i/p ACTNO and AMOUNT
+	      o/p updated amt return to calling area.
+
+	create or replace procedure cal_amt
+	(vaccno IN cust_acc_dts.accno%type,
+	 vamt IN OUT cust_acc_dts.accbal%type) is
+	begin
+
+	update cust_acc_dts
+	set accbal=accbal+vamt(I/P)
+	where accno = vaccno;
+	
+	select accbal into vamt from cust_acc_dts
+	where accno = vaccno;
+
+	end cal_amt; 
+	
+ 	declare 
+	vno cust_acc_dts.accno%type;
+	amt number;
+	begin
+	vno :=&vno;
+	amt :=&amt;
+	cal_amt(vno,amt);
+	D_O.P_L('Acc No:'||vno);
+	D_O.P_L('Acc Bal Is:'||amt);
+	end;
+
+
+
+
+
+
+
+

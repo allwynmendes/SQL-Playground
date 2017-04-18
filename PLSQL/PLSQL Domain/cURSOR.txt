@@ -1,0 +1,48 @@
+Cursor:
+-----------------------------------
+- Every SQL query should be process under the cursor area.
+- It is temperary memory area.
+- Table Data is processed against query.
+
+Query Execution Process:
+-----------------------------------
+- User----Query------Oracle Engine<-------      ORA DB  
+			|            |   |
+			|	     |   |	  DD
+		     SQL Statement __|   |
+		      Executor           |      ACTUAL  
+			/	         |       DATA
+		       /                 |        |
+User----PL/SQL---- Query                 |        |
+	 Block                 PLSQL     |        |
+	      ----PLsql stmt---Executor--|        |
+                                                  |
+						Temp Mem Area
+						
+- The condition verification has been done under temp mem area.
+- Before getting output to the client query will processed under the cursor   area
+- In that cursor area intermediate operations performed.
+- Cursor are of two types:
+	Implicite Cursor
+	Explicite Cursor
+	Ref Cursor
+
+- Implicite Cursor:
+	It is managed by oracle engine.
+	Allocation and Deallocation has been done by oracle engine.
+	Used by every sql query
+	Properties of Implicite Cursor
+	SQL%ISOPENg
+	SQL%FOUND
+	SQL%NOTFOUND
+	SQL%ROWCOUNT   Integer
+-Explicite Cursor:
+	Temp Area
+	To display multiple records using program/Procedure
+	It is managed by user.
+	It consist of 4 steps
+		Declare the cursor
+			
+		Open a cursor
+		fetch data from cursor
+		Close the cursor
