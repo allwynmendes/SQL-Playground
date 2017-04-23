@@ -31,7 +31,7 @@ BEGIN
     l_start := dbms_utility.get_time;
     forall x in a.first..a.last
         insert into test values(a(x));
-    dbms_output.put_line('Time Taken (using for all) : ' || (dbms_utility.get_time - l_start));
+    dbms_output.put_line('Time Taken (using forall) : ' || (dbms_utility.get_time - l_start));
     
 END;
 
