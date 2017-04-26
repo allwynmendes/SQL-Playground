@@ -5,3 +5,4 @@ done
 echo ""
 echo "Script Name               : "$0
 echo "No. of arguments supplied : "$#
+echo "Arguments                 : "$*
