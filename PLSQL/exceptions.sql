@@ -42,3 +42,28 @@ EXCEPTION
     when others then
         dbms_output.put_line('Error !!!');
 END;
+
+/*Write code to implement : raise_application_error(-20000, 'Message Here')
+                         to raise_application_error(20999, 'Message Here')
+*/
+--Action:   Use an error number in the range of -20000 to -20999, inclusive.
+DECLARE
+    x exception;
+    a number;
+    b number;
+    c number;
+BEGIN
+    a := 10;
+    b := 120;
+    c := a + b;
+    if(c < 100) then
+        dbms_output.put_line('c is valid');
+    else
+        raise x;
+    end if;
+EXCEPTION 
+    when x then
+        raise_application_error(-20001, 'c is invalid, should be less than 100');
+    when others then
+        dbms_output.put_line('Other Error !!!');
+END;
