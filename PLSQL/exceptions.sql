@@ -16,6 +16,8 @@ begin
         dbms_output.put_line('Name   : '||ename);
         dbms_output.put_line('Salary : '||esal);
 exception 
+    when no_data_found then
+        dbms_output.put_line('No such customer');
     when others then
         dbms_output.put_line('Error !!!');
 end;
