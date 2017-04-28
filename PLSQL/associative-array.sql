@@ -18,3 +18,31 @@ BEGIN
         i := city_population.NEXT(i);
     end loop;
 END;
+
+--Same thing, but using for loop
+DECLARE
+    TYPE phonenumbers IS TABLE OF VARCHAR2(20) INDEX BY PLS_INTEGER;
+    family phonenumbers;
+    i PLS_INTEGER;
+BEGIN
+    family(338) := 'Allwyn';
+    family(337) := 'Tarcila';
+    family(415) := 'Tony';
+    
+    i := family.first;
+    
+    while i is not null loop
+        dbms_output.put_line(family(i));
+        i := family.next(i);
+    end loop;
+END;
+
+--Notice the output order is different from that of how it was inserted in code
+/*Output :
+Tarcila
+Allwyn
+Tony
+
+
+PL/SQL procedure successfully completed.
+*/
