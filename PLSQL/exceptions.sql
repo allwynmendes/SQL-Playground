@@ -56,6 +56,7 @@ BEGIN
     a := 10;
     b := 120;
     c := a + b;
+    --select employee_id into a from employees;  --This line is used to test for SQLERRM
     if(c < 100) then
         dbms_output.put_line('c is valid');
     else
@@ -65,5 +66,7 @@ EXCEPTION
     when x then
         raise_application_error(-20001, 'c is invalid, should be less than 100');
     when others then
-        dbms_output.put_line('Other Error !!!');
+        dbms_output.put_line('Error : '||SQLERRM);
 END;
+
+
