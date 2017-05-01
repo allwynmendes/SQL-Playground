@@ -6,9 +6,9 @@ DECLARE
         cursor c1 is select * from employees where salary between 3000 and 5000;
     begin
         for x in c1 loop
-            dbms_output.put_line(x.first_name);
+            dbms_output.put_line(x.first_name||' '||x.salary);
         end loop;
-    end pr1;
+    end pr1; 
 BEGIN
     pr1;
 END;
