@@ -42,7 +42,22 @@ BEGIN
     total := names.count;
     dbms_output.put_line('Total Students : '||total);
     for i in 1..total loop
-        dbms_output.put_line('Student :'||names(i)||'Grades : '||marks(i));
+        dbms_output.put_line('Student :'||names(i)||' Grades : '||marks(i));
     end loop;
+END;
 
+
+--Another NESTED TABLE Example
+DECLARE 
+    cursor c1 is select * from employees where to_char(hire_date, 'yyyy')=2005;
+    TYPE e_names IS TYPE OF varchar2(20);
+    names e_names;
+    counter number := 0;
+BEGIN
+    for x in c1 loop
+        counter := counter + 1;
+        names.extend;
+        names(counter) := x.first_name;
+        dbms_output.put_line();
+    end loop;
 END;
