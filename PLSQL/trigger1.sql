@@ -21,3 +21,10 @@ insert into emp values(s1.nextval, 'B', 'Developer', 8000);
 insert into emp values(s1.nextval, 'C', 'Tester', 7500);
 insert into emp values(s1.nextval, 'D', 'Database', 7750);
 insert into emp values(s1.nextval, 'E', 'Dev-Ops', 6000);
+
+create table emp_dump(
+    id references emp(id),
+    ename varchar(20),
+    user1 varchar(20),
+    date1 date
+);
