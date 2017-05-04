@@ -52,4 +52,4 @@ END;
 
 show error;
 
-update emp set esal=15000 where ejob = 'CEO';
+update emp set esal=10000;
