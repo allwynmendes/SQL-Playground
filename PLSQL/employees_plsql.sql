@@ -50,14 +50,14 @@ END;
 --Another NESTED TABLE Example
 DECLARE 
     cursor c1 is select * from employees where to_char(hire_date, 'yyyy')=2005;
-    TYPE e_names IS TYPE OF varchar2(20);
-    names e_names;
+    TYPE e_names IS TABLE OF varchar2(20);
+    names e_names := e_names();
     counter number := 0;
 BEGIN
     for x in c1 loop
         counter := counter + 1;
         names.extend;
         names(counter) := x.first_name;
-        dbms_output.put_line();
+        dbms_output.put_line(names(counter));
     end loop;
 END;
