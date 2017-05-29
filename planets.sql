@@ -1,5 +1,5 @@
 --create table structure for planets
-create or replace table planets(
+create table planets(
     id number primary key,
     name varchar2(15),
     distance number(10, 2),
