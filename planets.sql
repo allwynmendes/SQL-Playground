@@ -1,5 +1,3 @@
-select * from tab;
-
 --create table structure for planets
 create or replace table planets(
     id number primary key,
