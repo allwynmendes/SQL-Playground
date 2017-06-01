@@ -52,11 +52,13 @@ DECLARE
     vsal emp.sal%type;
     vbonus number;
 BEGIN
-    select ename, job, sal into vname, vjob, vsal from emp where empno=7369;
+    select ename, job, sal into vname, vjob, vsal from emp where empno=7902;
     if vjob = 'PRESIDENT' then
         goto PRES;
     elsif vjob = 'CLERK' then
         goto CLRK;
+    elsif vjob = 'SALESMAN' then
+        goto SLMN;
     else
         dbms_output.put_line('No Bonus');
         goto endline;
@@ -66,6 +68,9 @@ BEGIN
         goto last_block;
     <<CLRK>>
         vbonus := vsal * 0.30;
+        goto last_block;
+    <<SLMN>>
+        vbonus := vsal * 0.40;
         goto last_block;
     <<last_block>>
     dbms_output.put_line('Your bonus is : '||vbonus);
