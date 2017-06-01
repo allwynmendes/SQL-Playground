@@ -30,3 +30,15 @@ BEGIN
     dbms_output.put_line('JOB   : '||var1.job);
     dbms_output.put_line('SAL   : '||var1.sal);
 END;
+
+--Similar code using assignment operator(:=)
+DECLARE 
+    vempno emp.empno%type := 7566;
+    var1 emp.ename%type;
+    var2 emp.sal%type;
+BEGIN
+    --vempno := 7782;
+    select ename, sal into var1, var2 from emp where empno = vempno;
+    dbms_output.put_line('H1 '||var1||' !');
+    dbms_output.put_line('Your salary is '||var2);
+END;
