@@ -40,7 +40,6 @@ begin
     dbms_output.put_line(var1);
     dbms_output.put_line(B1.var1); 
 end;
-
 /*
 ORA-06550: line 16, column 32:
 PLS-00219: label 'B1' reference is out of scope 
@@ -56,12 +55,17 @@ BEGIN
     select ename, job, sal into vname, vjob, vsal from emp where empno=7369;
     if vjob = 'PRESIDENT' then
         goto PRES;
+    elsif vjob = 'CLERK' then
+        goto CLRK;
     else
         dbms_output.put_line('No Bonus');
         goto endline;
     end if;
     <<PRES>>
         vbonus := vsal * 0.75;
+        goto last_block;
+    <<CLRK>>
+        vbonus := vsal * 0.30;
         goto last_block;
     <<last_block>>
     dbms_output.put_line('Your bonus is : '||vbonus);
