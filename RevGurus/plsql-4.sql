@@ -45,3 +45,26 @@ end;
 ORA-06550: line 16, column 32:
 PLS-00219: label 'B1' reference is out of scope 
 */
+
+--Below is code that implements GOTO statement
+DECLARE
+    vname emp.ename%type;
+    vjob emp.job%type;
+    vsal emp.sal%type;
+    vbonus number;
+BEGIN
+    select ename, job, sal into vname, vjob, vsal from emp where empno=7369;
+    if vjob = 'PRESIDENT' then
+        goto PRES;
+    else
+        dbms_output.put_line('No Bonus');
+        goto endline;
+    end if;
+    <<PRES>>
+        vbonus := vsal * 0.75;
+        goto last_block;
+    <<last_block>>
+    dbms_output.put_line('Your bonus is : '||vbonus);
+    <<endline>>
+    dbms_output.put_line('--Code End--');
+END;
