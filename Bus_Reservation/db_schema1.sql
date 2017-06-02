@@ -74,4 +74,6 @@ create table bus_stops(
     stop_order number(10),
     primary key (stop_location),
     foreign key(trip_id) references bus_trip(trip_id)
-);    
+);
+
+Hi Priya     
