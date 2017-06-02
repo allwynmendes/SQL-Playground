@@ -1,0 +1,1 @@
+--This file contains schema for bus reservation system
