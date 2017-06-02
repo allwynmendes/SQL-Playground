@@ -45,4 +45,33 @@ create table bus_location(
     coordinates varchar2(100),
     last_updated timestamp,
     foreign key(bus_number) references buses(bus_number)
+);   
+
+create table bus_ownres(
+    company_id number(10),
+    bus_number varchar2(20),
+    foreign key(company_id) references bus_company(company_id),
+    foreign key(bus_number) references buses(bus_number)
+);    
+
+create table bus_trip(
+    trip_id number(10),
+    company_id number(10),
+    bus_number varchar2(10),
+    date_time timestamp,
+    from_dest varchar2(15),
+    to_dest varchar2(15),
+    price number(10,2),
+    seats_available number(2),
+    primary key(trip_id),
+    foreign key(company_id) references bus_company(company_id),
+    foreign key(bus_number) references buses(bus_number)
+);    
+
+create table bus_stops(
+    trip_id number(10),
+    stop_location number(10),
+    stop_order number(10),
+    primary key (stop_location),
+    foreign key(trip_id) references bus_trip(trip_id)
 );    
