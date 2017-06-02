@@ -76,4 +76,32 @@ create table bus_stops(
     foreign key(trip_id) references bus_trip(trip_id)
 );
 
-Hi Priya     
+--Customer Information
+
+create table customer(
+    customer_id number(10),
+    customer_name varchar2(20),
+    customer_phnno number(10),
+    customer_email varchar2(30),
+    gender varchar2(10),
+    age number(10),
+    primary key(customer_id),
+    unique (customer_phnno),
+    unique (customer_email)
+);    
+    
+
+create table ticket(
+    ticket_id number(10),
+    trip_id number(10),
+    customer_id number(10),
+    pickup_location number(15),
+    drop_location number(15),
+    price number(10,2),
+    no_of_tickets number(10),
+    primary key(ticket_id),
+    foreign key(trip_id) references bus_trip(trip_id),
+    foreign key(customer_id) references customer(customer_id),
+    foreign key(pickup_location) references sub_location(slocation_id),
+    foreign key(drop_location) references sub_location(slocation_id)
+);
