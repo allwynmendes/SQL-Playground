@@ -1,6 +1,6 @@
 --This file contains schema for bus reservation system
 
---Tables related to locationing for buses (state-location-sublocation)
+--Location Tables
 create table states(
     state_id varchar2(2),
     state_name varchar2(30),
@@ -22,3 +22,27 @@ create table sub_location(
     primary key(slocation_id),
     foreign key(location_id) references location(location_id)
 );
+
+--Bus Information
+
+create table bus_company(
+    company_id number(10),
+    company_name varchar2(50),
+    password varchar2(50),
+    primary key (company_id)
+);
+
+create table buses(
+    bus_number varchar2(20),
+    seats number(2),
+    ac char(1),
+    seat_type varchar2(15),
+    primary key (bus_number)
+);    
+
+create table bus_location(
+    bus_number varchar2(20),
+    coordinates varchar2(100),
+    last_updated timestamp,
+    foreign key(bus_number) references buses(bus_number)
+);    
