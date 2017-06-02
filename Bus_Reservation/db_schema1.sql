@@ -90,7 +90,6 @@ create table customer(
     unique (customer_email)
 );    
     
-
 create table ticket(
     ticket_id number(10),
     trip_id number(10),
@@ -104,4 +103,27 @@ create table ticket(
     foreign key(customer_id) references customer(customer_id),
     foreign key(pickup_location) references sub_location(slocation_id),
     foreign key(drop_location) references sub_location(slocation_id)
+);
+
+create table payment_details(
+    ticket_id number(10),
+    mode_of_payment varchar2(15),
+    payment_status varchar2(15),
+    foreign key(ticket_id) references ticket(ticket_id)
+);
+
+create table customer_login(
+    customer_id number(10),
+    username varchar(20),
+    password varchar(20),
+    foreign key (customer_id) references customer(customer_id)
+);
+
+create table passengers(
+    ticket_id number(10),
+    passenger_name varchar(100),
+    gender char(1),
+    age number(3),
+    seat_number number(2),
+    foreign key(ticket_id) references ticket(ticket_id)
 );
