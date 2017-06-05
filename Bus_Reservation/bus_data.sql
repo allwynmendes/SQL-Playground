@@ -21,3 +21,11 @@ insert into bus_location values('GA03AE4318','15.906560, 73.823572',sysdate-1);
 --Bus_trip
 /*Pune to Sangli*/
 insert into bus_trip values(1,1,'MH01AK47','25-JUN-17 02.30.00.000000 PM', 'MH12', 'MH10', 400, 40);
+
+--Bus_Stops
+insert into bus_stops values(1, 3, 1);
+insert into bus_stops values(1, 2, 2);
+insert into bus_stops values(1, 1, 3);
+insert into bus_stops values(1, 5, 4);
+insert into bus_stops values(1, 4, 5);
+insert into bus_stops values(1, 6, 6);
