@@ -20,7 +20,6 @@ create table sub_location(
     slocation_name varchar2(30),
     location_id number(3),
     primary key(slocation_id),
-    foreign key(location_id) references location(location_id)
 );
 
 --Bus Information
