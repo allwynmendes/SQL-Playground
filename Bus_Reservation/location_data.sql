@@ -17,4 +17,13 @@ insert into location values('22', 'KA', 'Belgaum');
 insert into location values('09', 'KA', 'Mysore');
 
 --Sub_location
+insert into sub_location values(1, 'Kothrud', 'MH12');
+insert into sub_location values(2, 'Swargate', 'MH12');
+insert into sub_location values(3, 'Pune Station', 'MH12');
+insert into sub_location values(4, 'Kadegoan', 'MH10');
+insert into sub_location values(5, 'Isalampur', 'MH10');
+insert into sub_location values(6, 'Vita', 'MH10');
+insert into sub_location values(7, 'Andheri', 'MH01');
+insert into sub_location values(8, 'Bandra', 'MH01');
+insert into sub_location values(9, 'Worli', 'MH01');
 
