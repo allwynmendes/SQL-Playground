@@ -19,7 +19,7 @@ create table sub_location(
     slocation_id number(4),
     slocation_name varchar2(30),
     location_id varchar2(4),
-    primary key(slocation_id),
+    primary key(slocation_id)
 );
 
 --Bus Information
