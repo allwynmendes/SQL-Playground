@@ -17,3 +17,7 @@ insert into bus_owners values(2,'GA03AE4318');
 insert into bus_location values('MH12DB1112', '18.496753, 73.857216', sysdate);
 insert into bus_location values('MH01AK47', '19.110482, 72.872888', sysdate);
 insert into bus_location values('GA03AE4318','15.906560, 73.823572',sysdate-1);
+
+--Bus_trip
+/*Pune to Sangli*/
+insert into bus_trip values(1,1,'MH01AK47','25-JUN-17 02.30.00.000000 PM', 'MH12', 'MH10', 400, 40);
