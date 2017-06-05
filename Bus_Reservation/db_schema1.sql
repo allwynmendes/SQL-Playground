@@ -8,7 +8,7 @@ create table states(
 );
 
 create table location(
-    location_id number(3),
+    location_id varchar2(2),
     state_id varchar2(2),
     location_name varchar2(30),
     primary key(location_id, state_id),
