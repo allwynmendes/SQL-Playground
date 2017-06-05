@@ -46,7 +46,7 @@ create table bus_location(
     foreign key(bus_number) references buses(bus_number)
 );   
 
-create table bus_ownres(
+create table bus_owners(
     company_id number(10),
     bus_number varchar2(20),
     foreign key(company_id) references bus_company(company_id),
