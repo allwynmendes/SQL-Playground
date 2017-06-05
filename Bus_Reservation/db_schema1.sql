@@ -9,10 +9,10 @@ create table states(
 
 create table location(
     location_id number(3),
-    location_name varchar2(30),
     state_id varchar2(2),
-    primary key(location_id),
-    foreign key(state_id) references states(state_id)
+    location_name varchar2(30),
+    primary key(location_id, state_id),
+    foreign key(state_id) references states(state_id) on delete cascade
 );
 
 create table sub_location(
