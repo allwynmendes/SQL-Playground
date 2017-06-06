@@ -124,5 +124,6 @@ create table passengers(
     gender char(1),
     age number(3),
     seat_number number(2),
+    unique(seat_number),
     foreign key(ticket_id) references ticket(ticket_id)
 );
