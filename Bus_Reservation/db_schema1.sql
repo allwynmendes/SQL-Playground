@@ -108,6 +108,7 @@ create table payment_details(
     ticket_id number(10),
     mode_of_payment varchar2(15),
     payment_status varchar2(15),
+    unique(ticket_id),
     foreign key(ticket_id) references ticket(ticket_id)
 );
 
