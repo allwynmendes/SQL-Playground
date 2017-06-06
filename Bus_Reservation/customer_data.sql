@@ -1,5 +1,5 @@
 --Customers
-insert into customer values(1, 'Shiwani', '8109773714', 'agarwalshiwani301@gmail.com', 'F', 25);
+insert into customer values(1, 'Shiwani', '8109773714', 'agrawalshiwani30@gmail.com', 'F', 25);
 insert into customer values(2, 'Priya', '9702499793', 'priya.tawar25@gmail.com', 'F', 25);
 
 --Customer_login
