@@ -23,7 +23,7 @@ begin
     dbms_output.put_line('Trip Id          : '||tripid);
     dbms_output.put_line('Seates Available : '||seats_avail);
 end;
-/*------------------------END--------------------------------*/
+/
 
 --Ticket
 insert into ticket values(1, 1, 2, 3, 5, 400, 2);
