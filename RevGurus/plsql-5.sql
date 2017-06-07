@@ -31,3 +31,13 @@ begin
         dbms_output.put_line(x);
     end loop;
 end;
+
+--while loop
+DECLARE
+    x number := 1;
+BEGIN
+    while x<=10 loop
+        dbms_output.put_line(x);
+        x := x + 1;
+    end loop;
+END;
