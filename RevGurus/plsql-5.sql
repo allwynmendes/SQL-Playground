@@ -41,3 +41,19 @@ BEGIN
         x := x + 1;
     end loop;
 END;
+
+--nested while loop
+DECLARE
+    x number := 1;
+    y number ;
+BEGIN
+    while x<=10 loop
+        y := 1;
+        dbms_output.put_line(x);
+            while y<=10 loop
+                dbms_output.put_line(y);
+                y := y + 1;
+            end loop;
+        x := x + 1;
+    end loop;
+END;
