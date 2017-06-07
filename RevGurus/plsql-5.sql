@@ -22,3 +22,12 @@ begin
       dbms_output.put_line(x);
     end loop;
 end;
+
+--for loop for printing reverse 0 to 10 numbers
+declare
+    x number;
+begin
+    for x in reverse 0 .. 10 loop
+        dbms_output.put_line(x);
+    end loop;
+end;
