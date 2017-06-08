@@ -39,15 +39,16 @@ END;
 
 
 --Explicit Cursor
-DECLARE
-    cursor c1 is select * from emp;
+DECLARE 
+    cursor c1 is select * from emp; --declate
     rec1 c1%rowtype;
 BEGIN
-    open c1;
+    open c1;  --open
     loop
-        fetch c1 into rec1;
+        fetch c1 into rec1; --fetch
         dbms_output.put_line(rec1.ename);
         exit when c1%notfound;
     end loop;
     dbms_output.put_line(sql%rowcount);
+    close c1; --close
 END;
