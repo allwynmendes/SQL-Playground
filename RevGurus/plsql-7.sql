@@ -30,3 +30,9 @@ BEGIN
         dbms_output.put_line('Not Found');  --In case of Not Found, compiler raises an exception
     end if;
 END;
+
+--Implicit - use of sql%rowcount
+BEGIN
+    update emp set job='MGR' where job='MANAGER';
+    dbms_output.put_line(sql%rowcount);
+END;
