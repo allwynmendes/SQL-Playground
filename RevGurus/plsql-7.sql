@@ -36,3 +36,18 @@ BEGIN
     update emp set job='MGR' where job='MANAGER';
     dbms_output.put_line(sql%rowcount);
 END;
+
+
+--Explicit Cursor
+DECLARE
+    cursor c1 is select * from emp;
+    rec1 c1%rowtype;
+BEGIN
+    open c1;
+    loop
+        fetch c1 into rec1;
+        dbms_output.put_line(rec1.ename);
+        exit when c1%notfound;
+    end loop;
+    dbms_output.put_line(sql%rowcount);
+END;
